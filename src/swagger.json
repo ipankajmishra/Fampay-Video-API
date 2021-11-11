@@ -1,0 +1,35 @@
+{
+  "swagger":"2.0"
+  ,"info":{"description":"Fampay Video API"
+  ,"version":"1.0"
+  ,"title":"Fampay Video API"}
+  ,"host":"localhost:18000"
+  ,"basePath":"/"
+  ,"tags":[{"name":"Videos","description":"Videos API"}]
+  ,"schemes":["http"]
+  ,"produces": ["application/json"],
+  "paths": {
+    "/videos/{searchQuery}": {
+      "get": {
+        "x-swagger-router-controller": "videos",
+        "operationId": "getVideoDetail",
+        "tags": ["Videos"],
+        "summary": "Get video by keyword",
+        "parameters": [{
+          "name": "searchQuery",
+          "in": "path",
+          "type": "string",
+          "required": true
+        }],
+        "responses": {
+          "200": {
+            "description": "Get video by keyword"
+          }
+        }
+      }
+    }
+  },
+    "ArrayOfVideos": {
+      "type": "array"
+  }
+}
