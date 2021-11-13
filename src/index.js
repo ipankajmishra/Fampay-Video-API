@@ -12,7 +12,7 @@ app.use(routes);
 
 //start http server
 const httpServer = http.createServer(app);
-let port = 18000;
+var port = process.env.PORT || 8080;
 let serviceName = "Fampay"
 httpServer.listen(port);
 console.log(`[${serviceName}] http server listening at port ${port}`);
