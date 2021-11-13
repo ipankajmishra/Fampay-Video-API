@@ -4,11 +4,23 @@ const videosService = require('../services/videos.service');
 const get = async function(req, res){
     let searchQuery = req.params.searchQuery;
     let pageNumber = req.params.pageNumber;
-    if(pageNumber>1){
-        res.send(videosService.paginate(data.Videos,20,pageNumber));
+    let nextPage = parseInt(pageNumber)+1;
+    if(parseInt(pageNumber)>1){
+        let response = {
+            data:videosService.paginate(data.Videos,12,pageNumber),
+            next:nextPage,
+            prev:parseInt(pageNumber)-1
+        }
+        res.send(response);
+    }else{
+        let response = {
+            data: await videosService.get(searchQuery),
+            next:nextPage,
+            prev:undefined
+        }
+        res.send(response);
     }
-    let videoList = await videosService.get(searchQuery);
-    res.send(videoList);
+    
 }
 
 module.exports = {

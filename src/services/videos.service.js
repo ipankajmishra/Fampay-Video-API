@@ -35,7 +35,7 @@ function paginate(array, page_size, page_number) {
 
 
 const get = async function(searchQuery){
-    setInterval(()=>backgroundVideosFetch(searchQuery),60000);
+    // setInterval(()=>backgroundVideosFetch(searchQuery),60000);
     let apiKey = data.ACTIVE_API_KEY[0];
     let url = YOUTUBE_URL+apiKey;
     url = url.replace("keyword",searchQuery);
@@ -57,7 +57,7 @@ const get = async function(searchQuery){
       }
     let videosList = youtubeData.data.items;
     data.Videos = videosList;
-    return paginate(videosList,20,1);
+    return paginate(videosList,12,1);
     
 }
 
