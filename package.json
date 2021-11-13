@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "nodemon src/index.js",
     "start": "nodemon src/index.js",
-    "build": "npm run clean && cp -r src dist/src && cp -r bin dist/bin && cp *.yml dist && cp *.yaml dist && cp *.json dist && cp README.md dist && cp LICENSE dist",
+    "build": "npm run build",
     "clean": "rimraf dist && mkdirp dist"
   },
   "author": "",
