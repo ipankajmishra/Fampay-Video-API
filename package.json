@@ -4,10 +4,7 @@
   "description": "Fampay Task",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon src/index.js",
-    "start": "nodemon src/index.js",
-    "build": "npm run build",
-    "clean": "rimraf dist && mkdirp dist"
+    "start": "node src/index.js"
   },
   "author": "",
   "license": "EPL-2.0",
